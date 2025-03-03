@@ -71,9 +71,9 @@ public class MainApp {
         int searchSeries = 5;
         List<User> users_car = userService.getUserByCarModelAndSeries(searchModel, searchSeries);
         if (users.isEmpty()) {
-            System.out.println("Пользователи не найдены");
+//            System.out.println("Пользователи не найдены");
         } else {
-            System.out.println("Пользователи найдены");
+//            System.out.println("Пользователи найдены");
         }
 
         context.close();
