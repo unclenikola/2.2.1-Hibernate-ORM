@@ -1,6 +1,7 @@
 package hiber;
 
 import hiber.config.AppConfig;
+import hiber.dao.UserDao;
 import hiber.model.Car;
 import hiber.model.User;
 import hiber.service.CarService;
@@ -68,7 +69,12 @@ public class MainApp {
 
         String searchModel = "BMW";
         int searchSeries = 5;
-        User user = userService.getUserByCarModelAndSeries(searchModel, searchSeries);
+        List<User> users_car = userService.getUserByCarModelAndSeries(searchModel, searchSeries);
+        if (users.isEmpty()) {
+            System.out.println("Пользователи не найдены");
+        } else {
+            System.out.println("Пользователи найдены");
+        }
 
         context.close();
     }
